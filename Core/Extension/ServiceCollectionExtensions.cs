@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Core.Utilities.IoC;
+using Microsoft.Extensions.DependencyInjection;
 //Program.cs için Birden fazla modul eklediğimizde modüllerimizi çözümleyebilmemiz için ekledik.
 public static class ServiceCollectionExtensions
 {

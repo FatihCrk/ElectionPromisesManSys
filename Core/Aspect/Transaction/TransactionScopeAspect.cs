@@ -1,9 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using System.Transactions;
+
+public class TransactionScopeAspect : MethodInterception
+{
+    public override void Intercept(IInvocation invocation)
+    {
+        using (TransactionScope transactionScope = new TransactionScope())
+        {
+            try
+            {
+                invocation.Proceed();
+                transactionScope.Complete();
+            }
+            catch (System.Exception e)
+            {
+                transactionScope.Dispose();
+                throw;
+            }
+        }
+    }
+}
 
 namespace Core.Aspect.Transaction
 {
