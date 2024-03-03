@@ -10,6 +10,6 @@ namespace Entities.Concrete
     {
         public int PartyID { get; set; }
         public string PartyName { get; set; }
-        public List<Candidate> Candidates { get; set; }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿public class CandidateDTO
+﻿public class CandidateDetailDTO
 {
     public int CandidateID { get; set; }
     public string FirstName { get; set; }

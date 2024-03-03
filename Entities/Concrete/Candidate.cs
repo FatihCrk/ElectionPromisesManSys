@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int PartyID { get; set; }
-        public Party Party { get; set; }
-        public List<Promise> Promises { get; set; }
+     
+ 
     }
 }
